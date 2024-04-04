@@ -1,4 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=SoDo+Sans:wght@600&display=swap');
+
+@font-face{
+    font-family: SoDoSansLight;
+    src: url("fonts/SoDoSans-Light/SoDoSans-Light.ttf");
+}
+
+@font-face {
+    font-family: SoDoSansRegular;
+    src: url(fonts/SoDoSans-Regular/SoDoSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: SoDoSansSemiBold;
+    src: url(fonts/SoDoSans-SemiBold/SoDoSans-SemiBold.ttf);
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -7,7 +23,7 @@
 
 body {
     overflow-x: hidden;
-    font-family: 'SoDo Sans SemiBold', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+    font-family: SoDoSansSemibold, 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
 }
 
 :root {
@@ -27,6 +43,10 @@ body {
     --regular: calc(var(--small) * var(--scale));
     --small: calc(var(--smallest) * var(--scale));
     --smallest: calc((var(--base-size)) / (var(--scale)));
+}
+
+.font-sodosanssec {
+    font-family: SoDoSansRegular;
 }
 
 /* HEADER */
