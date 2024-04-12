@@ -61,7 +61,6 @@ header {
 nav {
     display: flex;
     width: 90%;
-    border: 1px solid brown;
     justify-content: space-between;
     height: 80%;
 }
@@ -71,8 +70,6 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid blue;
-
 }
 
 .cont-logoandlinks .logo-wrapper {
@@ -81,12 +78,9 @@ nav {
     background-image: url(images/logo-starbucks.png);
     background-size: contain;
     background-repeat: no-repeat;
-    border: 1px solid purple;
-
 }
 
 .cont-logoandlinks .options-links {
-    border: 1px solid black;
     height: 100%;
     display: flex;
     align-items: center;
@@ -107,7 +101,6 @@ nav {
 .cont-fas-bttns {
     width: 35%;
     height: 100%;
-    border: 1px solid black;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -116,10 +109,14 @@ nav {
 .cont-fas-bttns .c-findstore {
     width: 40%;
     height: 100%;
-    border: 1px solid blue;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+}
+
+.c-findstore:hover {
+    color: var(--light-green);
+    cursor: pointer;
 }
 
 
@@ -127,7 +124,6 @@ nav {
 .cont-fas-bttns .c-loginsign {
     width: 50%;
     height: 100%;
-    border: 1px solid blue;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -136,13 +132,22 @@ nav {
 .btn-signin, .btn-joinnow {
     border: none;
     border-radius: 20px;
+    font-family: SoDoSansRegular;
+}
+
+.btn-signin:hover, .btn-joinnow:hover{
+    cursor: pointer;
 }
 
 .btn-signin {
     width: 80px;
     height: 30px;
-    border: 1px solid black;
     background-color: white;
+    border: 1.5px solid var(--black);
+}
+
+.btn-signin:hover {
+    background-color: var(--light-blue);
 }
 
 .btn-joinnow {
@@ -150,6 +155,11 @@ nav {
     background-color: var(--black);
     width: 90px;
     height: 30px;
+    transition: transform 0.4s ease-in-out;
+} 
+
+.btn-joinnow:hover {
+    opacity: 0.8;
 }
 
 /* capa */
@@ -167,6 +177,9 @@ nav {
     display: flex;
     align-items: center;
     padding-left: 10rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 .div-rewardsrect span {
     color: white;
@@ -195,8 +208,19 @@ nav {
 }
 
 .text-coversect .span-1-cover {
-    font-size: var(--regular);
+    font-size: var(--small);
     padding-top: 5rem;
+}
+
+.bnt-joincover {
+    background-color: var(--light-green);
+    position: absolute;
+    top: 65%;
+    left: 3%;
+    width: 120px;
+    height: 40px;
+    font-weight: 600;
+    font-size: var(--smallest);
 }
 
 /* getting started is easy */
@@ -211,7 +235,6 @@ nav {
 .cont-sectsteps {
     width: 90%;
     height: 80%;
-    border: 1px solid blue;
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -222,7 +245,6 @@ nav {
 .title-textsteps {
     width: 50%;
     height: 20%;
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -236,7 +258,6 @@ nav {
 .c-stepsdesc {
     width: 100%;
     height: 80%;
-    border: 1px solid black;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -244,7 +265,6 @@ nav {
 
 .c-eachstep {
     height: 80%;
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -272,4 +292,111 @@ nav {
 .c-eachstep span {
     width: 95%;
     text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+
+@media screen and (max-width: 500px) {
+    header {
+        height: 55px;
+    }
+
+    .cont-logoandlinks {
+        width: 100%;
+    }
+
+    .logo-wrapper {
+        width: 35% !important;
+    }
+
+    .options-links {
+        display: none !important;
+    }
+
+    .btn-sidebar {
+        width: 20%;
+        border: none;
+        background-color: white;
+        padding: 0;
+        display: block !important;
+    }
+
+    .cont-fas-bttns {
+        display: none;
+    }
+
+    .btn-sidebar i {
+        color: var(--black);
+        font-size: 1.5rem;
+    }
+
+    .offcanvas-bootstrap-ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .offcanvas {
+        width: 60%;
+    }
+
+    /* capa */
+
+    .text-coversect .span-1-cover {
+        font-size: var(--smallest);
+        padding: 0;
+    }
+
+    .text-coversect {
+        position: absolute;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .text-coversect p {
+        margin-bottom: 0;
+        width: 90%;
+        text-align: center;
+    }
+
+    .bnt-joincover {
+        top: 33%;
+        left: 36%;
+    }
+
+    .cont-coverstarbucks {
+        height: 450px;
+        background-size: 209%;
+        background-position: bottom;
+    }
+
+    /*getting started */
+    .c-stepsdesc {
+        flex-direction: column;
+    }
+
+    .title-textsteps {
+        width: auto;
+        height: auto;
+    }
+
+    .i-numberstep, .c-eachstep p {
+        margin-bottom: 1rem;
+    }
+
+    .c-stepsdesc {
+        gap: 2rem;
+    }
+
+    .cont-sectsteps {
+        padding: 0;
+    }
 }
